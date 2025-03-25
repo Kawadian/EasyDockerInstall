@@ -15,7 +15,6 @@ choice=$(whiptail --title "Dockerインストールオプション" --menu "イ�
 "1" "Dockerのみ" \
 "2" "DockerとDocker Compose" \
 "3" "Docker、Docker Compose、Portainer" \
-"4" "Docker、Docker Compose、Portainer、Ubuntu Desktop" 3>&1 1>&2 2>&3)
 
 # Dockerのインストール
 sudo apt update
@@ -45,15 +44,5 @@ if [ "$choice" -ge 3 ]; then
     portainer/portainer-ce
 fi
 
-if [ "$choice" -ge 4 ]; then
-    # ubuntuDesktopのDockerパッケージをインストール
-    docker run -d \
-    --name ubuntu-desktop \
-    -p 6080:80 \
-    -p 5900:5900  \
-    -e RESOLUTION=1920x1080 \
-    -v /home/hdd/mnt/4TB/4TB/Webtop_data/Downloads:/root/Downloads \
-    dorowu/ubuntu-desktop-lxde-vnc
-fi
 
 echo "インストールが完了しました。"
