@@ -2,10 +2,6 @@
 
 set -e
 
-# 実行方法
-# curl -sSL https://script.dian.0am.jp/scripts/docker_install.sh | bash
-# wget -qO- https://script.dian.0am.jp/scripts/docker_install.sh | bash
-
 # whiptail がインストールされていなければインストール
 if ! command -v whiptail &> /dev/null; then
     sudo apt update
