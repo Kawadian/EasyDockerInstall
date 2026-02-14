@@ -23,6 +23,11 @@ TUI (Text User Interface) を使用して、インストールするコンポー
 ```bash
 bash install_docker.sh
 ```
+
+Github Pages経由でCurlコマンドから実行することもできます。
+```bash
+curl -fsSL https://kawadian.github.io/EasyDockerInstall/install_docker.sh | bash
+```
 TUI（選択画面）の操作スクリプトを実行すると、whiptailを利用した選択メニューが表示されます。以下の選択肢の中から、インストールしたいオプションを選んでください：
 
 Dockerのみ
