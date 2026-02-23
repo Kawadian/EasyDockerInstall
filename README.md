@@ -7,7 +7,7 @@
 - Portainer (オプション)
 - Dockhand (オプション)
 
-TUI (Text User Interface) を使用して、インストールするコンポーネントを選択することができ���す。
+TUI (Text User Interface) を使用して、インストールするコンポーネントを選択することができます。
 
 ---
 
