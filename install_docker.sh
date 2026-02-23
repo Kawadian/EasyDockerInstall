@@ -10,10 +10,11 @@ fi
 
 # TUI でインストールオプションを選択
 CHOICE=$(whiptail --title "Dockerインストールオプション" \
---menu "インストールするオプションを選択してください:" 15 60 3 \
+--menu "インストールするオプションを選択してください:" 17 60 4 \
     "1" "Dockerのみ" \
     "2" "DockerとDocker Compose" \
     "3" "Docker、Docker Compose、Portainer" \
+    "4" "Docker、Docker Compose、Dockhand" \
 3>&1 1>&2 2>&3)
 
 # Cancel 押下時は終了
@@ -60,6 +61,17 @@ if [ "$CHOICE" -eq 3 ]; then
       -v /var/run/docker.sock:/var/run/docker.sock \
       -v portainer_data:/data \
       portainer/portainer-ce:latest
+fi
+
+# Dockhand のインストール（選択肢 =4 の場合）
+if [ "$CHOICE" -eq 4 ]; then
+    sudo docker run -d \
+      --name dockhand \
+      --restart unless-stopped \
+      -p 3000:3000 \
+      -v /var/run/docker.sock:/var/run/docker.sock \
+      -v dockhand_data:/app/data \
+      fnsys/dockhand:latest
 fi
 
 echo "インストールが完了しました。"
